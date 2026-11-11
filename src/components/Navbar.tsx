@@ -8,12 +8,13 @@ import { Logo } from "./Logo";
 import { useKeranjang } from "@/lib/store";
 import type { Kecamatan } from "@/lib/types";
 
+// Urutan menu desktop & HP. Kecamatan (dropdown) sengaja tepat sebelum Cek Pesanan.
 const MENU = [
   { href: "/", label: "Beranda" },
-  { href: "/kecamatan", label: "Kecamatan", dropdown: true },
   { href: "/wisata", label: "Wisata" },
   { href: "/produk", label: "Oleh-oleh" },
   { href: "/peta", label: "Peta" },
+  { href: "/kecamatan", label: "Kecamatan", dropdown: true },
   { href: "/cek", label: "Cek Pesanan" },
 ];
 
@@ -99,7 +100,7 @@ function NavLinks({ kecamatan }: { kecamatan: Kecamatan[] }) {
                   <ChevronDown className={`size-4 transition-transform ${buka ? "rotate-180" : ""}`} />
                 </button>
                 {buka && (
-                  <div className="absolute left-1/2 top-full z-50 mt-2 w-[440px] -translate-x-1/2 rounded-2xl border border-line bg-white p-2 shadow-xl shadow-deep/10">
+                  <div className="absolute right-0 top-full z-50 mt-2 w-[440px] rounded-2xl border border-line bg-white p-2 shadow-xl shadow-deep/10">
                     <ul className="grid grid-cols-2 gap-0.5">
                       {kecamatan.map((k) => (
                         <li key={k.slug}>
