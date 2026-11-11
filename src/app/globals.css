@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* Token warna diambil dari desain di folder "Gambar Design". */
+@theme {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #15222b;
+  --color-muted: #5b6b74;
+  --color-faint: #8a979e;
+  --color-line: #e3e9eb;
+  --color-surface: #f2f5f6;
+
+  --color-laut-50: #e6f4f6;
+  --color-laut-100: #d8f0f3;
+  --color-laut-600: #135d7c;
+  --color-laut-700: #0e4c68;
+  --color-laut-800: #0b3c52;
+  --color-deep: #0c2831;
+  --color-deep-2: #15343d;
+
+  --color-link: #1f48c9;
+  --color-sun-100: #fbedb4;
+  --color-sun-400: #f5c518;
+  --color-sun-800: #6f5300;
+  --color-wa: #1f9d55;
+  --color-wa-dark: #188346;
+  --color-ok: #2e8b3e;
+  --color-ok-50: #e8f5ea;
+  --color-bad: #d6453d;
+  --color-bad-50: #fdecea;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container-page {
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+@media (min-width: 640px) {
+  .container-page {
+    padding-inline: 24px;
+  }
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-link);
+}
+
+/* Slider harga dua ujung */
+.range-dual {
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+.range-dual::-webkit-slider-thumb {
+  pointer-events: auto;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 2px solid var(--color-laut-700);
+  cursor: pointer;
+}
+.range-dual::-moz-range-thumb {
+  pointer-events: auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 2px solid var(--color-laut-700);
+  cursor: pointer;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Halaman dengan bar bawah menempel di HP: geser tombol bantuan ke atas bar */
+@media (max-width: 1023px) {
+  body:has([data-bar-bawah]) [data-floating-assist] {
+    bottom: 6.5rem;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
